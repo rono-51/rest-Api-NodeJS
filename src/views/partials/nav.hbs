@@ -1,0 +1,126 @@
+<nav class="py-1.5 px-5 shadow-lg ">
+  <div class="flex justify-between items-center gap-10">
+    <div id="hamburger" class="cursor-pointer sm:hidden z-30">
+      <i class="fas fa-bars text-2xl"></i>
+    </div>
+    <a href="/" class="font-bold text-4xl leading-none">
+      Publics
+    </a>
+    <div class="hidden gap-4 grow sm:flex">
+      <a href="/signin" class="link">
+        Sing In
+      </a>
+      <a href="/signup" class="link">
+        Sing Up
+      </a>
+    </div>
+    <div
+      id="button-img"
+      class="border-[3px] rounded-full border-black  cursor-pointer"
+    >
+      <img src="  
+        {{#if avatar}}  
+          {{avatar}}
+        {{else}}
+          /images/default.png
+        {{/if}}
+      " class="select-none rounded-full w-12 h-12">
+    </div>
+  </div>
+  {{! Img card }}
+  <div
+    id="card-img"
+    class="absolute top-16 right-5 p-3 bg-white rounded-lg shadow-md border-2 border-slate-600 border-opacity-10 ghost transition duration-200 ease-linear z-10"
+  >
+    <div class="flex items-center gap-2 mb-4">
+      <div class="rounded-full">
+        <img src="
+        {{#if avatar}}  
+          {{avatar}}
+        {{else}}
+          /images/default.png
+        {{/if}}" class="select-none rounded-full w-10 h-10">
+      </div>
+      <div>
+        <h6 class="font-bold">
+          {{#if username}}
+            {{username}}
+          {{else}}
+            username
+          {{/if}}
+        </h6>
+        <p class="truncate w-11/12 text-xs sm:text-sm">
+          {{#if username}}
+            {{email}}
+          {{else}}
+            email@example.com
+          {{/if}}
+        </p>
+      </div>
+    </div>
+    <div>
+      {{#if username}}
+        <a href="/signin" class="block font-bold text-red-500 text-sm">
+            Logout
+        </a>
+        {{else}}
+        <a href="/signin" class="block font-bold text-green-500 text-sm">
+            Sing In
+        </a>
+      {{/if}}  
+    </div>
+  </div>
+  {{! Navigation }}
+  <div
+    id="navigation"
+    class="transition duration-300 ease-in fixed inset-0 w-full h-full bg-black bg-opacity-70 z-20 ghost"
+  >
+    <div class="bg-white h-full w-6/12 shadow-gray-500 py-20 px-5">
+      <div
+        class="flex items-center text-center flex-col border-b-[3px] border-gray-500 pb-2"
+      >
+        <div
+          class="w-12 h-12 border-[3px] border-black rounded-full cursor-pointer"
+        >
+          <img src="
+          {{#if avatar}}
+            {{avatar}}
+          {{else }}
+            /images/default.png
+          {{/if }}
+          " class="select-none rounded-full" />
+        </div>
+        <div class="">
+          <h5 class="font-bold text-lg">
+            {{#if username}}
+              {{username}}
+            {{else}}
+              username
+            {{/if}}
+          </h5>
+          <p class="truncate text-sm w-11/12">
+            {{#if username}}
+              {{email}}
+            {{else}}
+              email@example.com
+            {{/if}}
+          </p>
+        </div>
+      </div>
+      {{! links }}
+      <div class="mt-2 flex gap-1.5 flex-col">
+        <a href="/signin">
+          <div class="link-mb">
+            Sign in
+          </div>
+        </a>
+        <a href="/signup">
+          <div class="link-mb">
+            Sign Up
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="/js/nav.js"></script>
+</nav>

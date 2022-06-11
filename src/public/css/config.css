@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.link-mb{
+    @apply font-bold py-1.5 px-3 rounded-md transition duration-200 hover:bg-slate-300
+}
+
+.link{
+    @apply font-bold hover:text-indigo-500 transition duration-200 ease-linear
+}
+
+.ghost{
+    @apply opacity-0 pointer-events-none
+}
+
+.link-footer{
+    @apply font-bold text-sm transition ease-linear duration-200 hover:underline decoration-2 lg:text-base
+}
+
+.link-circles{
+    @apply text-xl
+}
+
+.label{
+    @apply block font-bold transition ease-linear duration-300 decoration-2 hover:underline mb-3
+}
+
+.input{
+    @apply w-full p-1.5 font-bold text-gray-700 border-2 transition duration-200 ease-linear focus:border-indigo-500 outline-none rounded
+}
+
+.button-normal{
+    @apply rounded bg-blue-700 font-bold w-full py-2.5 text-white transition duration-200 ease-in hover:bg-blue-600
+}

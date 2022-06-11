@@ -1,0 +1,104 @@
+<title> {{username}} edit </title>
+
+<main class="mt-10">
+    {{!-- Container--}}
+    <div class="md:border-2 md:border-gray-800 md:border-opacity-30 md:m-12 md:p-8 md:rounded-md md:shadow-md lg:mx-auto lg:w-3/5">
+        <h1 class="text-center text-4xl font-bold ">
+            Edit information for {{username}}
+        </h1>
+        <form action="/publics/user/{{id}}/edit" method="POST" class="px-6" enctype="multipart/form-data">
+            {{!-- Flex Img edited --}}
+            <div class="flex items-center gap-5 mt-5">
+                <div class="select-none rounded-full shadow-xl">
+                    <img src="{{avatar}}" class="rounded-full object-cover w-24 h-24">
+                </div>
+                <div> 
+                    <p class="block font-bold ">
+                        Only available images in format <span class="text-blue-500">.png</span>, <span class="text-blue-500">.jpeg</span> or <span class="text-blue-500">.jpg</span
+                    </p>
+                    <input id="input-file" type="file" name="avatar" hidden="true">
+                    <button id="button-open-file" type="button" class="py-3 px-5 rounded-md mt-3 shadow-md  text-white block bg-black font-bold transition ease-in-out duration-150 hover:bg-gray-800"> 
+                        Upload image
+                    </button>
+                </div>
+            </div>
+            {{!-- Text --}}
+            <div class="mt-6">
+                <h3 class="text-2xl font-bold mb-3">
+                    General information:
+                </h3>
+                {{!-- Username --}}
+                <div>
+                    <label for="username" class="label">
+                        Username:
+                    </label>
+                    <input spellcheck="false" type="text" name="username"class="input" type="text" value="{{username}}" placeholder="username" name="username" id="username"  autocompare="off">
+                </div>
+                {{!-- Email --}}
+                <div class="mt-4">
+                    <label for="email" class="label">
+                        Email:
+                    </label>
+                    <input class="input" type="email" value="{{email}}" placeholder="example35@gmail.com" name="email" id="email" autocompare="off">
+                </div>
+                {{!-- Password --}}
+                <div class="mt-4">
+                    <label for="password" class="label">
+                        Password:
+                    </label>
+                    <input class="input" type="password" value="{{password}}" placeholder="*********" name="password" id="password" autocompare="off">
+                </div>
+                <div class="mt-5">
+                    <h5 class="text-center font-bold text-xl">
+                        Description of {{username}}
+                    </h5>
+                    <textarea spellcheck="false" name="description" id="description" autocomplete="off" class="input h-[7rem] max-h-[7rem] min-h-[6rem] mt-4">{{description}}</textarea>
+                </div>
+            </div>
+            {{!-- Social links --}}
+            <div class="mt-5 flex flex-col">
+                {{!-- 1 --}}
+                <div>
+                    <div class="flex gap-4 mt-4">
+                        <div class="text-2xl text-green-700">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <input type="text" name="linkWsp" class="input" placeholder="http://web.whatsapp.com/{{username}}" autocomplete="off" value="{{socialLinks.linkWsp}}">
+                    </div>
+                    <div class="flex gap-4 mt-4">
+                        <div class="text-2xl text-indigo-700">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <input type="text" name="linkFb" class="input" placeholder="http://facebook.com/{{username}}" autocomplete="off" value="{{socialLinks.linkFb}}">
+                    </div>
+                    <div class="flex gap-4 mt-4">
+                        <div class="text-black text-2xl">
+                            <i class="fab  fa-github"></i>
+                        </div>
+                        <input type="text" name="linkGit" class="input" placeholder="https://github.com/{{username}}" autocomplete="off" value="{{socialLinks.linkGit}}">
+                    </div>
+                </div>
+                {{!-- 2 --}}
+                <div class="mt-5 mx-auto select-none">
+                    <img src="/images/socialDraw.svg" class="w-[350px]">
+                </div>
+            </div>
+            {{!-- button --}}
+            <div class="my-5">
+                <button type="submit" class="button-normal">
+                    Send New Data
+                </button>
+            </div>
+            <div>
+                <a href="/publics/user/{{id}}" class="flex items-center w-[45px] h-full min-h-[1rem] hover:w-[60px] transition-[width] duration-500 ease-linear">
+              {{! Stick }}
+                    <span class="h-[2px] bg-green-500 relative w-full">
+                        <span class="flex left-0 top-[-5px] absolute border-2 border-green-500 w-[12px] border-t-0 border-l-0 h-[12px] rotate-[138deg] transition-[width] duration-500 ease-linear"></span>
+                    </span>
+                </a>
+            </div>
+        </form>
+    </div>
+</main>
+
+<script src="/js/editform.js"></script>

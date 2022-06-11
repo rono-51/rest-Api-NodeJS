@@ -1,0 +1,68 @@
+<title> {{username}} </title>
+<main class="lg:m-20">
+  <div class="flex flex-col relative lg:flex-row gap-4 lg:border-2  lg:border-gray-300 lg:shadow-2xl rounded">
+    {{! Background }}
+    <div
+      class="bg-[url('/images/bg-default.jpg')] bg-cover h-[20rem] sm:h-[19rem] lg:h-[35rem] lg:w-[45%]">
+    </div>
+    <div class="lg:max-w-[55%] mt-3">
+      <div class="lg:flex lg:items-center lg:gap-4">
+          <div
+        class="select-none border-[6px] shadow-2xl rounded-full border-white absolute top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] lg:static lg:top-0 lg:left-0 lg:translate-x-0 lg:translate-y-0">
+        <img
+          src="{{avatar}}"
+          class="rounded-full object-cover w-32 h-32"
+        />
+      </div>
+        <div>
+            <h1 class="mt-20 font-bold text-center text-5xl lg:mt-0">
+                {{username}}
+            </h1>
+            <p class="hidden lg:block font-medium mt-2 text-gray-500">
+                {{email}} 
+            </p>
+        </div>
+      </div>
+      <div class="px-6 lg:pt-5 lg:h-2/3">
+        <div class="mt-5 lg:flex lg:flex-col lg:justify-between  lg:h-full">
+        <div class="">
+            <h4 class="block font-bold text-xl mb-3 lg:text-3xl">
+          Description:
+        </h4>
+        <p class="font-semibold lg:text-xl block">
+          {{description}}
+        </p>
+        </div>
+        {{! socials }}
+        <div class="mt-5 flex items-center justify-between ">
+          <div class="flex gap-3 text-2xl">
+            <a href=" {{socialLinks.linkWsp}} " class="text-green-600">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href=" {{socialLinks.linkFb}} " class="text-blue-600">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href=" {{socialLinks.linkGit}} " class="text-black">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div>
+            <a
+              href="/publics/user/{{id}}/edit"
+              class="flex items-center w-[45px] h-full min-h-[1rem] hover:w-[60px] transition-[width] duration-500 ease-linear"
+            >
+              {{! Stick }}
+              <span class="h-[2px] bg-green-500 relative w-full">
+                <span
+                  class="flex right-0 top-[-5px] absolute border-2 border-green-500 w-[12px] border-t-0 border-l-0 h-[12px] rotate-[-45deg] transition-[width] duration-500 ease-linear"
+                >
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</main>

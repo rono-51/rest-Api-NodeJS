@@ -1,0 +1,30 @@
+<title>Sign In</title>
+
+<main class="my-10 flex items-center justify-center">
+    <div class="p-8 lg:h-96  lg:w-2/5 w-4/5 shadow-lg border-[1px] border-slate-300 rounded">
+        <h1 class="font-bold md:text-5xl text-4xl leading-none mb-4 text-center">
+            Sign In
+        </h1>
+        <form action="/signin" method="post">
+            <div class="mb-4">
+                <label for="email" class="label">
+                    Email:
+                </label>
+                <input type="email" placeholder="example35@gmail.com" id="email" class="input" autocomplete="off" class="input" name="email">
+            </div>
+            <div class="mb-4">
+                <label for="pasword" class="label">
+                    Password:
+                </label>
+                <input type="password" class="input" id="password" autocomplete="off" name="password" placeholder="********"> 
+            </div>
+            <div class="mt-4">
+                <button id="button-submit" type="submit" class="button-normal">
+                    Send
+                </button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<script src="/js/signin.js" type="module"></script>
